@@ -54,13 +54,13 @@ func main() {
 			if _, err := strconv.Atoi(item[:4]); err == nil {
 				cleanedData = append(cleanedData, Movies{item[5:], item[:4]})
 			}
-			if _, err := strconv.Atoi(item[:4]); err != nil && item[:4] != "TBA" {
+			if _, err := strconv.Atoi(item[:4]); err != nil && item[:3] != "TBA" {
 				cleanedData = append(cleanedData, Movies{item, "TBA"})
 			}
 		}
 
 	}
 
-	fmt.Println(cleanedData[len(cleanedData)-1].Year)
+	fmt.Println(cleanedData)
 
 }
